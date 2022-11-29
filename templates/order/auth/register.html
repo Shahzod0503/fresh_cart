@@ -1,0 +1,73 @@
+{% extends 'order/auth/base2.html' %}
+{% load static %}
+{% block title %}
+register
+{% endblock %}
+
+{% block maincontext %}
+
+  <!-- section -->
+
+  <section class="my-lg-14 my-8">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-6 col-lg-4 order-lg-1 order-2">
+          <!-- img -->
+          <img src="{% static 'orders/assets/images/svg-graphics/signup-g.svg' %}" alt="" class="img-fluid">
+        </div>
+        <!-- col -->
+        <div class="col-12 col-md-6 offset-lg-1 col-lg-4 order-lg-2 order-1">
+          <div class="mb-lg-9 mb-5">
+            <h1 class="mb-1 h2 fw-bold">Get Start Shopping</h1>
+            <p>Welcome to FreshCart! Enter your email to get started.</p>
+          </div>
+          <!-- form -->
+          <form action="{% url 'register' %}" method="post">
+              {% csrf_token %}
+            <div class="row g-3">
+              <!-- col -->
+              <div class="col">
+                <!-- input --><input type="text" class="form-control" name="username" placeholder="User name" aria-label="User name""
+                  required>
+              </div>
+              <div class="col">
+                <!-- input --><input type="text" class="form-control" name="firs_name" placeholder="First name" aria-label="First name"
+                  required>
+              </div>
+              <div class="col">
+                <!-- input --><input type="text" class="form-control" name="last_name" placeholder="Last name" aria-label="Last name"
+                  required>
+              </div>
+              <div class="col-12">
+
+                <!-- input --><input type="email" class="form-control" name="email" placeholder="Email" required>
+              </div>
+              <div class="col-12">
+
+                <!-- input --><input type="password" class="form-control" name="password1" placeholder="Password"
+                  required>
+              </div>
+              <div class="col-12">
+
+                <!-- input --><input type="password" class="form-control" name="password2" placeholder="Confirm Password"
+                  required>
+              </div>
+              <!-- btn -->
+              <div class="col-12 d-grid"> <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+
+              <!-- text -->
+              <p><small>By continuing, you agree to our <a href="#!"> Terms of Service</a> & <a href="#!">Privacy
+                    Policy</a></small></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+{% endblock %}
